@@ -2,11 +2,11 @@
 
 ## Overview
 
-**UCX_MULTIRAIL** is a proof-of-concept demonstrating multi-rail communication using the Unified Communication X (UCX) framework across multiple GPUs and nodes. It showcases how a single message can be split and transmitted over multiple communication rails to increase effective bandwidth and overall throughput.
+**UCX_MULTIRAIL** is a proof-of-concept demonstrating multi-rail communication using the Unified Communication X (UCX) framework across multiple GPU nodes. It showcases how a single message can be split and transmitted over multiple network interface cards (communication rails) to increase effective bandwidth and overall throughput.
 
 ## Concept
 
-Multi-rail communication is achieved by dividing a message buffer into multiple chunks and distributing them across multiple GPUs using `cudaMemcpy()`. Each chunk is transmitted via a distinct UCX endpoint, enabling parallel communication. On the receiving side, chunks are gathered from the respective GPUs and reassembled into the original message buffer.
+Multi-rail communication is achieved by dividing a message buffer into multiple chunks and distributing them across multiple GPUs using `cudaMemcpy()`. Each chunk is transmitted via a distinct UCX endpoint, enabling parallel communication. On the receiving side, chunks are gathered from the respective GPUs and reassembled into on final receiving message buffer.
 
 The project supports:
 
@@ -55,14 +55,14 @@ Each benchmark supports the following flags:
 
 - `-T`: Select test type  
   - `TEST`: Basic communication test  
-  - `SPLIT`: Message split across multiple rails  
+  - `SPLIT`: One Message is split across multiple rails  
   - `PROFILE`: Enables profiling  
   - `MR`: Multi-rail parallel send  
   - `SINGLE`: Single-rail performance
 
 - `-n`: Number of communication rails (e.g., 1, 2, 4)
 - `-k`: Number of pipeline stages
-- `-r`: Split ratio (percentage of message assigned to each rail)
+- `-r`: Split ratio (percentage of message sent to peer rails)
 
 > **Note:** Update the receiver's address in the sender script before running any test.
 
