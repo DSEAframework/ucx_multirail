@@ -80,6 +80,4 @@ Benchmarks were conducted on **Hawk-AI** at the High-Performance Computing Cente
 
 If you use this work in academic or scientific contexts, please cite:
 
-> M. Rose, S. Homes, L. Ramsperger, J. Gracia, C. Niethammer, and J. Vrabec.  
-> *Cyclic Data Streaming on GPUs for Short Range Stencils Applied to Molecular Dynamics*.  
-> HeteroPar 2025, accepted.
+> Rose, M., Homes, S., Ramsperger, L., Gracia, J., Niethammer, C., Vrabec, J. (2026). Cyclic Data Streaming on GPUs for Short Range Stencils Applied to Molecular Dynamics. In: Schütze, L., et al. Euro-Par 2025: Parallel Processing Workshops. Euro-Par 2025. Lecture Notes in Computer Science, vol 16294. Springer, Cham. https://doi.org/10.1007/978-3-032-19144-1_5
